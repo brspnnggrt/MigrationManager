@@ -1,0 +1,27 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/css/iw/IW.css')
+		link(rel='stylesheet', href='/css/iw/IW.Reactors.css')
+		link(rel='stylesheet', href='/css/libs/jquery/jquery-ui-smoothness.css')
+		script(src='js/libs/d3/d3.min.js')
+		script(src='js/libs/jquery/jquery-1.12.2.min.js')
+		script(src='js/libs/jquery/jquery-ui-1.11.4.min.js')
+		script(src='js/libs/react/react.js')
+		script(src='js/libs/react/react-dom.js')
+		script(src='js/libs/marked/marked.js')
+		script(src='js/iw/jsx/dst/IW.Reactors.CommentBox.js')
+		script(src='js/iw/jsx/dst/IW.Reactors.LabelBox.js')
+		script(src='js/iw/jsx/dst/IW.Reactors.SelectBox.js')
+		script(src='js/iw/jsx/dst/IW.Reactors.UpdateMigrationBox.js')
+		script(src='js/iw/IW.MigrationManager.js')
+	body
+		#header
+			span.fancyArrow
+			select#migrationSelect.select
+				each migration, i in migrations
+					option(value=i) #{migration.name}
+			button#migrationAdd.button Add migration
+			p.title Migration Manager
+		block content

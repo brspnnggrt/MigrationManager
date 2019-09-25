@@ -1,0 +1,13 @@
+extends layout
+
+block content
+	#graph
+	#updateMigration
+		
+	#addMigration
+		#addMigration-form
+		form(action='/addMigration' method='post')
+			p Title 
+			input.input(type='text' name='addMigrationTitle')
+			p JSON
+			textarea.textarea(name='addMigrationJSON')
